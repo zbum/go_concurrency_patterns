@@ -1,13 +1,12 @@
 package main
 
-import(
+import (
 	"fmt"
 	"time"
-	"math/rand"
 )
 
 func boring(msg string) {
-	for i := 0 ; ; i++ {
+	for i := 0; ; i++ {
 		fmt.Println(msg, i)
 		time.Sleep(time.Second)
 	}

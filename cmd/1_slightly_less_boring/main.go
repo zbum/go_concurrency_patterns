@@ -1,19 +1,18 @@
 package main
 
-import(
+import (
 	"fmt"
-	"time"
 	"math/rand"
+	"time"
 )
 
 func boringWithRandom(msg string) {
-	for i := 0 ; ; i++ {
+	for i := 0; ; i++ {
 		fmt.Println(msg, i)
-		time.Sleep(time.Duration(rand.Intn(1e3))*time.Millisecond)
+		time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
 	}
 }
 
 func main() {
-	//boring("boring!")
 	boringWithRandom("boring!")
 }
