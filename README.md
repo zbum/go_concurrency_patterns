@@ -186,4 +186,52 @@ default:
 (ex5)
 
 ## Timeout using select
+* time.After 함수는 특정 시간동안 블로킹하는 채널을 반환합니다.
+```go
+func main() {
+	c := boring("Joe")
+    for {
+        select {
+        case s := <-c:
+            fmt.Println(s)
+        case <-time.After(1 * time.Second):
+            fmt.Println("You're too slow.")
+			return
+        }
+    }
+}
+```
+
+(ex6)
+
+## Timeout for whole conversation using select
+* for 루프 밖에서 timer를 만들고 전체 수행시간에 대해 timeout 처리를 할 수 있다.
+```go
+func main() {
+	c := boring("Joe")
+	timeout := time.After(5 * time.Second)
+    for {
+        select {
+        case s := <-c:
+            fmt.Println(s)
+        case <-timeout:
+            fmt.Println("Talk too much.")
+			return
+        }
+    }
+}
+```
+
+(ex7)
+
+
+## Quit channel
+* 원하는 타이밍에 수신을 그만 둘수도 있습니다.
+* gracefully shutdown 기능에 사용할 수 있습니다. 
+
+(ex8)
+
+## Daisy chain
+(ex9)
+
 
