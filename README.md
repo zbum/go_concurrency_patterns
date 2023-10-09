@@ -103,7 +103,7 @@ value = <-c
 * Joe, Ann 예제는 Ann 이 수신 되었더라도 Joe 가 수신되지 않았으면 기다려야 한다. 
 
 ## Multiplexing
-* (ex3)
+* (6_multiplexing)
 * fan-in 함수를 사용하면 준비된 정보를 바로 사용할 수 있다.
 
 ```
@@ -147,7 +147,7 @@ c <- Message{
 time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
 <-waitForIt
 ```
-
+(7_restoring_sequence)
 ## Select
 * Select 문은 다중 채널을 처리하는 방법을 제공합니다.
 ```go
@@ -183,7 +183,7 @@ default:
 	}()
 ```
 
-(ex5)
+(8_fanin_using_select)
 
 ## Timeout using select
 * time.After 함수는 특정 시간동안 블로킹하는 채널을 반환합니다.
@@ -202,7 +202,7 @@ func main() {
 }
 ```
 
-(ex6)
+(9_timeout_using_select)
 
 ## Timeout for whole conversation using select
 * for 루프 밖에서 timer를 만들고 전체 수행시간에 대해 timeout 처리를 할 수 있다.
@@ -222,16 +222,16 @@ func main() {
 }
 ```
 
-(ex7)
+(10_timeout_whole_conversation)
 
 
 ## Quit channel
 * 원하는 타이밍에 수신을 그만 둘수도 있습니다.
 * gracefully shutdown 기능에 사용할 수 있습니다. 
 
-(ex8)
+(11_quit_channel)
 
 ## Daisy chain
-(ex9)
+(12_daisy_chain)
 
 

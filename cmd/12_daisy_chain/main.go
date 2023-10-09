@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// Generator: function that returns a channel
+// Daisy-chain
 
 func f(left, right chan int) {
 	left <- 1 + <-right

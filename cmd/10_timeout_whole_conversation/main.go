@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Generator: function that returns a channel
+// Timeout for whole conversation using select
 
 func boring(msg string) <-chan string {
 	c := make(chan string)

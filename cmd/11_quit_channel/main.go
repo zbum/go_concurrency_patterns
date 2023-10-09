@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Generator: function that returns a channel
+// quit channel
 
 func boring(msg string, quit chan string) <-chan string {
 	c := make(chan string)
